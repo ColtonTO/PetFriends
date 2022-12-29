@@ -1,13 +1,18 @@
+// petfinder API javascript sdk variable
 const client = new petfinder.Client({ apiKey: "tYjMHZupQz0KErvq5ks2tmbgVeeNjmcIcWNxdXWDZB214NzP4I", secret: "DjUBiCURqrNwtRv9GZcuT8CUb6tHWMua1EIlqthR" });
+
+// random dog picture API
 const dogApi = ('https://dog.ceo/api/breeds/image/random');
+
+// global variables
 let animalContainer = document.querySelector('#animal-container');
 let doggoBtn = document.querySelector('#doggoBtn');
 let randomDog = document.querySelector('#randomDog');
 let searchBtn = document.querySelector('#search-submit');
-// let dogBreeds = document.querySelector('#dogSearch');
 
 
 
+// calls random dog picture API using the fetch function
 function doggo(){
 fetch(dogApi)
 .then(function (response) {
@@ -24,7 +29,6 @@ fetch(dogApi)
 
 async function showAnimals(animalType, searchBreed, postalCode) {
     let page = 1;
-    //do {
     apiResult = await client.animal.search({
         type: animalType,
         breed: searchBreed,
@@ -44,32 +48,31 @@ async function showAnimals(animalType, searchBreed, postalCode) {
 
 }
 
+
+
 function dogData() {
 
+    // clears search results 
     clearEl(animalContainer);
     
+    // sets variables for search criteria 
     let dogBreeds = document.querySelector('#dogSearch').value;
     let zips = document.querySelector('#zipSearch').value;
-    console.log(dogBreeds + "  : "+ zips);
     let animalType = 'Dog'
    
+    // pass parameters to dogs function
     dogs(animalType,dogBreeds,zips);
 }
 
 
     function dogs(animalType,dogBreeds,zips) {
+        // pass parameters to petfinder api function 
     showAnimals(animalType,dogBreeds,zips);
-   
-    console.log(dogBreeds);
 }
 
 
 
-// (async function dogs () {
-//     let dogBreeds = document.querySelector('#dog-id')
-//     let dogBreed = dogBreeds.textContent;
-//     await showAnimals("Dog", dogBreed, "80204");
-// })() 
+// used to clear animal container to make room for new search results
 let clearEl = function (element) {
     element.innerHTML = "";
 };
@@ -77,10 +80,12 @@ let clearEl = function (element) {
 
 function displayAnimal(animal){
     
-
+    // create div element for search results 
     const div = document.createElement('div')
+    // add classes to div element
     div.classList.add('tile', "is-child", "box", "my-2");
     div.innerHTML = "<strong>" + animal.name + "</strong>" + "</br> " + animal.description + ".</br> " + "<a href='"+animal.url+"'>Link to their WebPage</a>" + "</br> " + animal.breeds.primary + ".</br> " + animal.contact.address.city + ", " + animal.contact.address.country + " " + animal.contact.address.postcode;
+    // appends div elements to animal container id 
     document.querySelector("#animal-container").appendChild(div)
     let newA = document.createElement("a");
     newA.setAttribute("href", animal.url)
@@ -88,6 +93,7 @@ function displayAnimal(animal){
     if (animal.description == null) {
         return div.innerHTML = div.innerHTML = "<strong>" + animal.name + "</strong>" + ".</br> " + "<a href='"+animal.url+"'>Link to their WebPage</a>" + "</br> " + animal.breeds.primary + ".</br> " + animal.contact.address.city + ", " + animal.contact.address.country + " " + animal.contact.address.postcode;
     }
+    // creates an image element to show the search results images
     let animalImg = document.createElement("img");
     animalImg.classList.add("image", "is-128x128");
     if (animal.photos[0]) {
@@ -99,10 +105,8 @@ function displayAnimal(animal){
  
 }
 
-
+// event listeners 
 doggoBtn.addEventListener("click", doggo);
-
-
 searchBtn.addEventListener('click', dogData);
 
 
