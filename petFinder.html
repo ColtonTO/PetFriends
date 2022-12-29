@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/petFinder.css" />
+  <title>Document</title>
+  <body>
+    <h1>Dog Finder</h1>
+  
+    <form name="myform"   >
+      <div class= "soul">
+        <div>
+          <label for="">Breed</label>
+        </div>
+        <input id="dogSearch"  name="breed"    type="text" title="please enter Breed"  required/>
+        <div id="result" class= "soul">
+        </div>
+      </div>
+
+      <div class= "soul">
+        <div>
+          <label for="">Zip Code</label>
+        </div>
+        <input id="zipSearch" name="zipCode"    type="text" title="Please enter a Zip Code" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$" required/>
+        <div id="result2" class= "soul">
+        </div>
+      </div>
+      <div class="soul">
+        <button id="mysubmit" type="button" onclick="validateForm()"> submit  </button>
+      </div>
+    </form>
+  </head>
+</body>
+<script  src="scripts/zipcodes.js"></script>
+<script  src="scripts/petFinder.js"></script>
+</html>

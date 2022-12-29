@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <section class="hero is-white is-fukkheight">
+        <div class="container">
+            <form id="dog-group">
+                <div class="field">
+                    <label for="zip">Enter zip</label>
+                    <div class="control">
+                        <input class="input" type="text" id="zip" placeholder="Enter your zip code">
+                        <input type="submit" class="button">
+                    </div>
+                </div>
+            </form>
+
+            <div id="results">
+
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+    <script src="location.js"></script>
+</body>
+
+</html>

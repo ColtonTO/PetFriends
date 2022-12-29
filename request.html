@@ -1,60 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/request.css" />
-    <title>Document</title>
-    <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/request.css" />
+  <title>Document</title>
+  <body>
     <h1>Request Service</h1>
     <p>
       Please select any services you're interested in and fill out the form.
       We'll help create your account on our Fetch! PetFriend app to start your
       service request
     </p>
-    <form>
+    <form name="myform"  onsubmit="validateForm()" >
       <div class= "soul">
         <div>
-        <label for="">Select Service</label>
-    </div>
-        <select for="Services">
+          <label for="">Select Service</label>
+        </div>
+        <select name="services" id ="serviceItem" onchange="serviceSelection() ">
+            <option value="selctAService">Select  Service</option>
           <option value="Puppy Sitting">Puppy Sitting</option>
           <option value="Dog Walking">Dog Walking</option>
           <option value="Overnight Care">Overnight Care</option>
           <option value="Pet Sitting">Pet Sitting</option>
+          <option value="Other">Other</option>
         </select>
       </div>
-      <div class= "soul">
-      <div>
-        <label for="">name</label>
-    </div>
-        <input type="text" />
-      </div>
-      <div class= "soul">
+      <div class= "soul" id="others">
         <div>
-            <label for="">Pet Name(s)</label>
+          <label for="">Please Specify</label>
         </div>
-        
-        <input type="text" />
+        <input type="text" title="Please enter a description" required/>
       </div>
       <div class= "soul">
         <div>
-        <label for="">Email</label>
-    </div>
-        <input type="text" />
+          <label for="">name</label>
+        </div>
+        <input type="text" title="Please enter a Name" name="name" required/>
       </div>
       <div class= "soul">
         <div>
-        <label for="">phone</label>
-    </div>
-        <input type="text" />
+          <label for="">Pet Name(s)</label>
+        </div>
+
+        <input type="text" name="PetName" title="Please enter a Pet Name" required/>
       </div>
       <div class= "soul">
         <div>
-        <label for="">Pet Type</label>
-    </div>
-        <select for="Pets">
+          <label for="">Email</label>
+        </div>
+        <input type="email" name= "email" title="Please enter a valid email" required/>
+      </div>
+      <div class= "soul">
+        <div>
+          <label for="">phone</label>
+        </div>
+        <input type="text" name="phone" title="Please enter a valid phone number" pattern="^\s*?\d{10}(?:[-\s]\d{4})?\s*?$" required/>
+      </div>
+      <div class= "soul">
+        <div>
+          <label for="">Pet Type</label>
+        </div>
+        <select for="Pets" >
           <option value="Select Pet Type">Select Pet Type</option>
           <option value="Dog">Dog</option>
           <option value="Cat">Cat</option>
@@ -64,9 +72,9 @@
 
       <div class= "soul">
         <div>
-        <label for="">Your Location</label>
-    </div>
-        <select for="Location">
+          <label for="">Your Location</label>
+        </div>
+        <select for="Location" name="location">
           <option value="Select Location">Select Location</option>
           <option value="Bellevue">Seattle</option>
           <option value="Bellevue">Bellevue</option>
@@ -78,28 +86,30 @@
       </div>
       <div class= "soul">
         <div>
-        <label for="">How did you hear about us?</label>
-    </div>
-        <input type="text" />
+          <label for="">Address</label>
+        </div>
+        <input type="text" name="address" required/>
       </div>
       <div class= "soul">
         <div>
-        <label for="">Zip Code</label>
-    </div>
-        <input type="text" />
+          <label for="">Zip Code</label>
+        </div>
+        <input type="text" title="Please enter a Zip Code" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$" required/>
       </div>
       <div class= "soul">
         <div>
-        <label for="">How can we help?</label>
-    </div>
+          <label for="">How can we help?</label>
+        </div>
         <textarea name="" id="" cols="30" rows="10"></textarea>
-    </div>
-    <div class="soul">
+      </div>
+      <div class="soul">
         <input id="mysubmit"   type="submit" >
-    </div>
+      </div>
     </form>
   </head>
-  </body>
+</body>
 
-  <script></script>
+<script src="scripts/request.js">
+
+</script>
 </html>

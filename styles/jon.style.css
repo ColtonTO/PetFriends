@@ -25,3 +25,22 @@ img {
     width: 75%;
     height: auto;
 }
+
+#result2 {
+    background-color: rgb(251, 250, 250);
+    z-index: 2;
+}
+.element {
+    width: 100%;
+    
+    margin: 0px;
+ }
+ .soul {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+#result {
+    position: relative;
+    z-index: 2;
+    background-color: rgb(251, 250, 250);
+}

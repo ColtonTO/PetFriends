@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pet Friends</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./styles/jon.style.css">
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./styles/jon.style.css" />
+</head>
 
 <body>
     <section class="her is-white is-fukkheight-with-navbar block">
@@ -26,25 +26,12 @@
                     </div>
                     <div id="navbarMenuHeroB" class="navbar-menu">
                         <div class="navbar-end">
-                            <a href="#home" class="navbar-item is-active">
-                                Home
+                            <a href="#home" class="navbar-item is-active"> Home </a>
+                            <a href="#about-us" class="navbar-item"> About </a>
+                            <a href="#animal-container" class="navbar-item">
+                                Find a Friend
                             </a>
-                            <a href="#about-us" class="navbar-item">
-                                About
-                            </a>
-                            <a href="#services" class="navbar-item">
-                                Services
-                            </a>
-                            <span class="navbar-item">
-                                <a href="./userlogin.html" class="button is-info">
-                                    <span>Log In</span>
-                                </a>
-                            </span>
-                            <span class="navbar-item">
-                                <a href="userlogin.html" class="button is-light">
-                                    <span>Sign Up</span>
-                                </a>
-                            </span>
+                            
                         </div>
                     </div>
                 </div>
@@ -55,11 +42,10 @@
             <div class="container">
                 <div class="columns is-vcentered">
                     <div class="column is-one-third">
-                        <p class="title is-1">
-                            Welcome to PetFriends
-                        </p>
+                        <p class="title is-1">Welcome to PetFriends</p>
                         <p class="subtitle">
-                            >placeholder for subtitle
+                            Where we help unite animals in need with their new forever
+                            family
                         </p>
                     </div>
                     <div class="column is-two-thirds">
@@ -67,7 +53,6 @@
                             alt="pet logo" />
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="hero-foot">
@@ -75,119 +60,97 @@
                 <div class="container has-text-link">
                     <ul>
                         <li>
-                            <a><i class="fa fa-instagram" style="font-size:24px"></i></a>
+                            <a><i class="fa fa-instagram" style="font-size: 24px"></i></a>
                         </li>
                         <li>
-                            <a href="mailto:email@example.com?subject=Mail from our Website"><i class="fa fa-envelope" style="font-size:24px"></i></a>
+                            <a href="mailto:email@example.com?subject=Mail from our Website"><i class="fa fa-envelope"
+                                    style="font-size: 24px"></i></a>
                         </li>
                     </ul>
                 </div>
-
             </nav>
-
         </div>
     </section>
 
     <section class="hero has-background-grey-light py-4" id="aboutUs">
         <div class="hero-body">
-            <p class="title" id="about-us">
-                About us
-            </p>
+            <p class="title" id="about-us">About us</p>
             <p class="subtitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                We believe that every animal deserves a loving and stable environment to thrive in. That's why here at PetFriends 
+                our mission serves to connect users with the tools needed to find their furever companion. Our multi use search platform 
+                provides up to date information on adoptable animals based on breed and location. Let's help you find the next member of 
+                your family! :)
+                
             </p>
         </div>
     </section>
 
-    <div class="columns
-    is-vcentered
-    is-justify-content-space-evenly
-    p-5">
-        <div class="column is-one-third">
+    <div class="columns is-vcentered is-justify-content-space-evenly p-5">
+        <div class="column is-two-third">
             <p class="title is-2 is-spaced">
-                Become a pet sitter
+                Click the "Doggo" button for a random dog pic
             </p>
-            <p class="subtitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
+            <p class="subtitle">We thank you for all the support ❤️</p>
 
-            <button class="button is-link is-medium">
-                Learn More
-            </button>
+            <button class="button is-link is-medium" id="doggoBtn">Doggo</button>
         </div>
         <div class="column is-half">
-            <img src="" alt="" />
+            <img id="randomDog" src="" alt="" />
         </div>
     </div>
 
-    <section class="hero is-link py-4">
-        <div class="hero-body">
-            <p class="title" id="services">
-                Services
-            </p>
-            <p class="subtitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            <button class="button is-light is-medium" id="request-btn">
-                <a href="./request.html">
-                    Request Service
-                </a>
-            </button>
+    <section class="hero level is-link py-4">
+        <div class="tile is-ancestor level-item">
+            <div class="tile is-parent is-4 maincont">
+                <div class="tile is-child box">
+                    <div class="field">
+                        <label class="label">Search for animal here</label>
+                        <div class="control">
+                            <input name="dogSearch" id="dogSearch" class="input" type="text" placeholder="Dog Breed" />
+                            <div id="result" class="control"></div>
+                        </div>
+
+                        <div class="control">
+                            <input name="zipSearch" id="zipSearch" class="input" type="text"
+                                placeholder="Postal Code" />
+                            <div id="result2" class="control"></div>
+                        </div>
+                        <button id="search-submit" class="col-8 is-fullwidth button searchBtn is-info">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="container py-6">
         <div class="tile is-ancestor">
-
-            <div class="tile is-parent">
-                <article class="tile is-child box notification ">
-                    <p class="title">Pet Sitting</p>
-                    <p class="subtitle">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </article>
+            <div class="is-parent is-for column is-one-third">
+                <div class="is-child"></div>
             </div>
+            <div class="is-parent column is-two-thirds" id="animal-container">
 
-            <div class="tile is-parent">
-                <article class="tile is-child box notification ">
-                    <p class="title" id="animal">Dog Walking</p>
-                    <p class="subtitle">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </article>
-            </div>
-
-            <div class="tile is-parent">
-                <article class="tile is-child box notification ">
-                    <p class="title">Service</p>
-                    <p class="subtitle">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </article>
             </div>
         </div>
     </section>
 
-    <footer class="has-background-grey-darker
-    has-text-centered
-    has-text-white
-    py-6">
+    <footer class="has-background-grey-darker has-text-centered has-text-white py-6">
         <p>
-            Copyright 2022, PetFriends
+            <strong class="has-text-white">PetFriends is made with ❤️ by happy pet owners</strong>
         </p>
     </footer>
 
-    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
-    <script src="scripts/homePage.js"></script>
-
+    <script src="scripts/location.js"></script>
+    <script src="scripts/zipcodes.js"></script>
+    <script src="scripts/petFinder.js"></script>
+    <!-- <script>
+        const data = fetch("./scripts/zipcodes2.json").then((response) => {
+            return response.json();
+        });
+    </script> -->
 </body>
+
+</html>

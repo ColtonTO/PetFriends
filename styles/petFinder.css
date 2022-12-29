@@ -1,0 +1,61 @@
+body {
+    margin-left: 30%;
+
+    
+}
+.container {
+    border: solid;
+    width: 50%;
+    height: 70px;
+    margin-bottom: 10px;
+}
+.element {
+   width: 100%;
+   
+   margin: 0px;
+}
+#result2 {
+    position: fixed;
+    display: flex;
+    background-color: rgb(251, 250, 250);
+    z-index: 1;
+    width:35.1%;
+    left:30%;
+    margin-top: 0;
+    color: black;
+    display: none;
+}
+
+#result {
+    position: fixed;
+    display: flex;
+    background-color: rgb(251, 250, 250);
+    z-index: 1;
+    width:35.1%;
+    left:30%;
+    margin-top: 0;
+    color: black;
+    display: none;
+}
+.soul {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.soul input {
+    width: 50%;
+    height: 30px;
+}
+.soul select {
+    width: 51%;
+    height: 40px;
+}
+
+#mysubmit {
+    background-color:green;
+    color: aliceblue;
+    width: 51%;
+    height: 30px;
+}
+#others {
+    display: none;
+}
