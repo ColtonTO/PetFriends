@@ -1,16 +1,16 @@
-console.log("I am loading");
 function validateForm() {
    
     let dogSearch = document.forms["myform"]["breed"].value;
 
-    let zipSearch = document.forms["myform"]["zipCode"].value;
+    let zipSearch = document.forms["myform"]["zipSearch"].value;
     console.log(dogSearch);
     console.log(zipSearch);
     //add your work here
 }
 
-let zipCodeId = document.getElementById("zipSearch");
+let zipcodes = codes;
 
+let zipCodeId = document.getElementById("zipSearch");
 zipCodeId.addEventListener('keyup',showZipCodeSuggestion);
 zipCodeId.addEventListener('change', closeZipCodeSuggestion);
 
@@ -20,38 +20,38 @@ function showZipCodeSuggestion() {
     let text = document.getElementById("zipSearch").value.toUpperCase();
 
     let tempList = [] ;
+    
     if(text.length > 0) {
-        data.then(data => {
-            for ( let i=0; i< data.length; i++) {
-                let zipcode = "" + data[i].zip_code;
-                if(zipcode.toLocaleLowerCase().startsWith(text.toLocaleLowerCase())) {
-                    tempList.push(zipcode);
-                } 
-            }
-            document.getElementById("result2").style.display= "block";
-            
-            for(let i= 0; i<tempList.length;i++) {
-                if(i==6) break;
-                let result = document.getElementById("result2");
-                let tag = document.createElement("div");
-                tag.id = tempList[i];
-                tag.innerHTML = tempList[i];
-                tag.className = "element";
-                result.appendChild(tag);
-                document.getElementById(tempList[i]).onclick = function(){ 
-                    document.getElementById("zipSearch").value = tempList[i];
-                    console.log(tempList[i]);
-                   document.getElementById("result2").style.display= "none";
-                }
-                
-            }
-        });
+        for ( let i=0; i< zipcodes.length; i++) {
+            let zip = "" + zipcodes[i].zip_code;
+            if(zip.toLocaleLowerCase().startsWith(text.toLocaleLowerCase())) {
+                tempList.push(zip);
+            } 
+        }
+    
         
+        document.getElementById("result2").style.display= "block";
+        
+        for(let i= 0; i<tempList.length;i++) {
+            if(i==6) break;
+            let result = document.getElementById("result2");
+            let tag = document.createElement("div");
+            tag.id = tempList[i];
+            tag.innerHTML = tempList[i];
+            tag.className = "element";
+            result.appendChild(tag);
+            document.getElementById(tempList[i]).onclick = function(){ 
+                document.getElementById("zipSearch").value = tempList[i];
+                console.log(tempList[i]);
+               document.getElementById("result2").style.display= "none";
+            }
+            
+        }
     }
 }
 
 let breedId = document.getElementById("dogSearch");
-breedId.addEventListener('keyup', showSuggestion);
+ breedId.addEventListener('keyup', showSuggestion);
 breedId.addEventListener('change', closeSuggestion);
 function closeSuggestion() {
     setTimeout(() => {
@@ -67,7 +67,6 @@ function closeZipCodeSuggestion() {
 }
 
 function showSuggestion() {
-    
     document.getElementById("result").style.display= "none";
     document.getElementById("result").innerHTML = ""
     let text = document.getElementById("dogSearch").value.toUpperCase();
@@ -429,7 +428,7 @@ const dogBreads = [
     "Picardy Spaniel",
     "Plott Hound",
     "Podenco Canario",
-    "Pointer (dog dogSearch)",
+    "Pointer (dog breed)",
     "Polish Greyhound",
     "Polish Hound",
     "Polish Hunting Dog",
